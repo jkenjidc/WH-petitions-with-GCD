@@ -18,22 +18,6 @@ class ViewController: UITableViewController{
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: #selector(showCredits))
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(promptForSearch))
-        
-        //        if navigationController?.tabBarItem.tag == 0 {
-        //            urlString = "https://www.hackingwithswift.com/samples/petitions-1.json"
-        //        }else{
-        //            urlString = "https://www.hackingwithswift.com/samples/petitions-2.json"
-        //        }
-        //        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-        //            if let url = URL(string:  urlString){
-        //                if let data = try? Data(contentsOf: url){
-        //                    self?.parse(json: data)
-        //                    return
-        //                }
-        //            }
-        //            self?.showError()
-        //        }
-        
         performSelector(inBackground: #selector(fetchJSON), with: nil)
     }
     
